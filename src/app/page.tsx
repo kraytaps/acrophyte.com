@@ -42,8 +42,8 @@ export default function Home() {
 
 	return (
 		<main className="flex relative flex-col items-center w-full">
-			<section className="flex relative flex-col justify-center items-center w-full min-h-screen text-center text-grey-2">
-				<div className="flex relative z-10 flex-col gap-10 justify-end items-center p-6 w-full min-h-screen md:p-10">
+			<section className="flex relative flex-col justify-center items-center w-full text-center h-[calc(100dvh)] md:min-h-screen text-grey-2">
+				<div className="flex relative z-10 flex-col gap-10 justify-end items-center p-6 w-full h-full md:p-10">
 					<div className="relative md:absolute md:left-[50%] md:top-[45%]">
 						<div className="md:translate-x-[-50%] md:translate-y-[-50%] flex flex-col items-center justify-center gap-4">
 							<Image
