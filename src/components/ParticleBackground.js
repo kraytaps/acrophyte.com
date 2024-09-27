@@ -1,12 +1,10 @@
 import React, { useMemo, useRef, useState, useEffect } from "react";
-import { useFrame, useThree } from "@react-three/fiber";
-import * as THREE from "three";
+import { useFrame } from "@react-three/fiber";
 import { OrbitControls, useTexture } from "@react-three/drei";
 
 export default function ParticleBackground() {
 	const particlesTexture = useTexture("/textures/particles/1.png");
 	const pointsRef = useRef();
-	const { viewport } = useThree();
 	const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
 	const particles = useMemo(() => {

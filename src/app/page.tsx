@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { Input } from "@/components/ui/Input";
 import Image from "next/image";
 import SingEdSvg from "/public/svg/SingEdSvg";
@@ -20,26 +19,6 @@ const brandLogos = [
 ];
 
 export default function Home() {
-	const [gridItems, setGridItems] = useState(30); // Default number of items
-
-	useEffect(() => {
-		const updateGrid = () => {
-			const width = window.innerWidth;
-			if (width < 480) {
-				setGridItems(20); // Fewer items on smaller screens
-			} else if (width < 768) {
-				setGridItems(24);
-			} else {
-				setGridItems(30); // More items on larger screens
-			}
-		};
-
-		window.addEventListener("resize", updateGrid);
-		updateGrid(); // Initialize on component mount
-
-		return () => window.removeEventListener("resize", updateGrid);
-	}, []);
-
 	return (
 		<main className="flex relative flex-col items-center w-full">
 			<section className="flex relative flex-col justify-center items-center w-full text-center h-[calc(100dvh)] md:min-h-screen text-grey-2">
