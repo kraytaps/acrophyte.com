@@ -22,16 +22,18 @@ const config: Config = {
 		fontSize,
 		fontFamily: {
 			avenir: ["var(--font-avenir)"],
+			ownersXWide: ["var(--font-ownersXWide)"],
 		},
 		extend: {
 			colors: {
 				background: "var(--background)",
 				foreground: "var(--foreground)",
 				"grey-0": "#C8C8C8",
-				"grey-1": "#6C6C6C",
+				"grey-1": "#94918F",
 				"grey-2": "#494949",
 				"white-0": "#FAFAFA",
 				"white-1": "#E7E7E7",
+				"gold-0": "#FFFED5",
 			},
 		},
 	},
