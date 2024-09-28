@@ -25,6 +25,8 @@ export default function ParticleBackground() {
 		return positions;
 	}, []);
 
+	const prevPositions = useRef(new Float32Array(particles.length));
+
 	useEffect(() => {
 		const handleMouseMove = (event) => {
 			setMousePosition({
@@ -40,7 +42,7 @@ export default function ParticleBackground() {
 		};
 	}, []);
 
-	useFrame(() => {
+	useFrame((state, delta) => {
 		if (pointsRef.current) {
 			const positions = pointsRef.current.geometry.attributes.position.array;
 			const gridSize = Math.sqrt(positions.length / 3);
@@ -56,18 +58,24 @@ export default function ParticleBackground() {
 						Math.pow(x - mousePosition.x, 2) + Math.pow(y - mousePosition.y, 2)
 					);
 
-					const bulgeStrength = 0.2;
-					const bulgeRadius = 2.5;
+					const bulgeStrength = 0.35;
+					const bulgeRadius = 0.5;
 
-					let z = 0;
+					let targetZ = 0;
 					if (distanceToMouse < bulgeRadius) {
-						// Calculate the bulge effect, strongest at the center
 						const t = 1 - distanceToMouse / bulgeRadius;
 						const smoothT = t * t * (3 - 2 * t); // Smoothstep function
-						z = Math.cos(smoothT * Math.PI) * bulgeStrength;
+						targetZ = Math.cos(smoothT * Math.PI) * bulgeStrength;
 					}
 
-					positions[index * 3 + 2] = z;
+					// Lerp between the current position and the target position
+					const lerpFactor = 1 - Math.pow(0.1, delta); // Adjust 0.1 to control the "friction"
+					const newZ =
+						prevPositions.current[index * 3 + 2] +
+						(targetZ - prevPositions.current[index * 3 + 2]) * lerpFactor;
+
+					positions[index * 3 + 2] = newZ;
+					prevPositions.current[index * 3 + 2] = newZ;
 				}
 			}
 
