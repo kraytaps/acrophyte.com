@@ -1,6 +1,5 @@
 "use client";
 
-import { Input } from "@/components/ui/Input";
 import Image from "next/image";
 import SingEdSvg from "/public/svg/SingEdSvg";
 import SingHaiYiSvg from "/public/svg/SingHaiYiSvg";
@@ -9,6 +8,7 @@ import GRCSvg from "/public/svg/GRCSvg";
 import MomentusSvg from "/public/svg/MomentusSvg";
 import AcrophyteLogo from "/public/img/acrophyte-logo.png";
 import Scene from "@/components/Scene";
+import WaitlistForm from "@/components/WaitlistForm";
 
 const brandLogos = [
 	SingEdSvg,
@@ -37,13 +37,7 @@ export default function Home() {
 						</div>
 					</div>
 					<div className="flex flex-col gap-10 items-center text-grey-1">
-						<div className="flex flex-col gap-6 items-center">
-							<p className="~text-base/xl">
-								if you&apos;d like to be notified of our launch, enter your
-								email below
-							</p>
-							<Input placeholder="Enter your email here" />
-						</div>
+						<WaitlistForm />
 						<div className="flex flex-wrap gap-8 justify-center items-center">
 							{brandLogos.map((Svg, index) => (
 								<Svg

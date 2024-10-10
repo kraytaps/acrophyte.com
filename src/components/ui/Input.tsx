@@ -1,5 +1,5 @@
 import * as React from "react";
-import RightArrowSvg from "/public/svg/RightArrowSvg";
+// import RightArrowSvg from "/public/svg/RightArrowSvg";
 
 import { cn } from "@/lib/utils";
 
@@ -18,7 +18,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
 					ref={ref}
 					{...props}
 				/>
-				<RightArrowSvg className="absolute right-6 top-1/2 -translate-y-1/2" />
+				{/* <RightArrowSvg className="absolute right-6 top-1/2 -translate-y-1/2" /> */}
 			</div>
 		);
 	}

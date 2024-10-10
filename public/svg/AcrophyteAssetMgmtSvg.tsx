@@ -3259,42 +3259,42 @@ export default function AcrophyteAssetMgmtSvg({
 				>
 					<stop
 						offset="0.298"
-						stop-color="#615F5F"
+						stopColor="#615F5F"
 					/>
 					<stop
 						offset="0.386"
-						stop-color="#615F5F"
-						stop-opacity="0.976"
+						stopColor="#615F5F"
+						stopOpacity="0.976"
 					/>
 					<stop
 						offset="0.486"
-						stop-color="#615F5F"
-						stop-opacity="0.906"
+						stopColor="#615F5F"
+						stopOpacity="0.906"
 					/>
 					<stop
 						offset="0.593"
-						stop-color="#615F5F"
-						stop-opacity="0.789"
+						stopColor="#615F5F"
+						stopOpacity="0.789"
 					/>
 					<stop
 						offset="0.704"
-						stop-color="#615F5F"
-						stop-opacity="0.626"
+						stopColor="#615F5F"
+						stopOpacity="0.626"
 					/>
 					<stop
 						offset="0.818"
-						stop-color="#615F5F"
-						stop-opacity="0.416"
+						stopColor="#615F5F"
+						stopOpacity="0.416"
 					/>
 					<stop
 						offset="0.934"
-						stop-color="#615F5F"
-						stop-opacity="0.163"
+						stopColor="#615F5F"
+						stopOpacity="0.163"
 					/>
 					<stop
 						offset="1"
-						stop-color="#615F5F"
-						stop-opacity="0"
+						stopColor="#615F5F"
+						stopOpacity="0"
 					/>
 				</radialGradient>
 			</defs>

@@ -809,14 +809,14 @@
 <path d="M174.376 124.629H170.957V123.357H179.423V124.629H176.004V130.48H174.375L174.376 124.629Z" fill="#3D3D3D"/>
 <defs>
 <radialGradient id="paint0_radial_71_123" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(113.007 110) scale(112.089 110)">
-<stop offset="0.298" stop-color="#615F5F"/>
-<stop offset="0.386" stop-color="#615F5F" stop-opacity="0.976"/>
-<stop offset="0.486" stop-color="#615F5F" stop-opacity="0.906"/>
-<stop offset="0.593" stop-color="#615F5F" stop-opacity="0.789"/>
-<stop offset="0.704" stop-color="#615F5F" stop-opacity="0.626"/>
-<stop offset="0.818" stop-color="#615F5F" stop-opacity="0.416"/>
-<stop offset="0.934" stop-color="#615F5F" stop-opacity="0.163"/>
-<stop offset="1" stop-color="#615F5F" stop-opacity="0"/>
+<stop offset="0.298" stopColor="#615F5F"/>
+<stop offset="0.386" stopColor="#615F5F" stopOpacity="0.976"/>
+<stop offset="0.486" stopColor="#615F5F" stopOpacity="0.906"/>
+<stop offset="0.593" stopColor="#615F5F" stopOpacity="0.789"/>
+<stop offset="0.704" stopColor="#615F5F" stopOpacity="0.626"/>
+<stop offset="0.818" stopColor="#615F5F" stopOpacity="0.416"/>
+<stop offset="0.934" stopColor="#615F5F" stopOpacity="0.163"/>
+<stop offset="1" stopColor="#615F5F" stopOpacity="0"/>
 </radialGradient>
 </defs>
 </svg>
