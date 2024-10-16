@@ -18,7 +18,6 @@ export default function WaitlistForm() {
 
 	const onSubmit = async (values: z.infer<typeof formSchema>) => {
 		console.log(values);
-		setSubmitted(true);
 		try {
 			const response = await fetch("/api/mailingList", {
 				method: "PUT",
@@ -28,21 +27,27 @@ export default function WaitlistForm() {
 				body: JSON.stringify({ mail: values.email }),
 			});
 
+			console.log("Response status:", response.status);
+			console.log("Response ok:", response.ok);
+
 			const data = await response.json();
+			console.log("Response data:", data);
 
 			if (response.ok) {
 				console.log(data.message);
 				setSubmitted(true);
 			} else {
-				throw new Error(data.message);
+				setError(true);
+				throw new Error(data.message || "An error occurred");
 			}
 		} catch (error) {
 			console.error("Error:", error);
-			// Handle error (e.g., show error message to user)
+			setError(true);
 		}
 	};
 
 	const [submitted, setSubmitted] = useState(false);
+	const [error, setError] = useState(false);
 
 	return (
 		<>
@@ -50,6 +55,10 @@ export default function WaitlistForm() {
 				{submitted ? (
 					<p className="~text-base/xl">
 						Thank you for your interest! We will notify you when we launch.
+					</p>
+				) : error ? (
+					<p className="~text-base/xl text-red-500">
+						An error occurred. Please try again later.
 					</p>
 				) : (
 					<p className="~text-base/xl">
