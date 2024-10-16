@@ -16,9 +16,30 @@ export default function WaitlistForm() {
 		resolver: zodResolver(formSchema),
 	});
 
-	const onSubmit = (values: z.infer<typeof formSchema>) => {
+	const onSubmit = async (values: z.infer<typeof formSchema>) => {
 		console.log(values);
 		setSubmitted(true);
+		try {
+			const response = await fetch("/api/mailingList", {
+				method: "PUT",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({ mail: values.email }),
+			});
+
+			const data = await response.json();
+
+			if (response.ok) {
+				console.log(data.message);
+				setSubmitted(true);
+			} else {
+				throw new Error(data.message);
+			}
+		} catch (error) {
+			console.error("Error:", error);
+			// Handle error (e.g., show error message to user)
+		}
 	};
 
 	const [submitted, setSubmitted] = useState(false);
@@ -28,22 +49,19 @@ export default function WaitlistForm() {
 			<div className="flex flex-col gap-6 items-center">
 				{submitted ? (
 					<p className="~text-base/xl">
-						Thank you for your interest! We will notify you when we
-						launch.
+						Thank you for your interest! We will notify you when we launch.
 					</p>
 				) : (
 					<p className="~text-base/xl">
-						if you&apos;d like to be notified of our launch, enter
-						your email below
+						if you&apos;d like to be notified of our launch, enter your email
+						below
 					</p>
 				)}
 
 				<Form {...form}>
 					<form
 						onSubmit={form.handleSubmit(onSubmit)}
-						className={`flex relative ${
-							submitted ? "opacity-50" : ""
-						}`}
+						className={`flex relative ${submitted ? "opacity-50" : ""}`}
 					>
 						<FormField
 							control={form.control}
